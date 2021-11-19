@@ -19,4 +19,4 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut. Lore
 ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna [aliqua](https://external.com/).
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco [laboris nisi ut](mailto:sample@email.com).
