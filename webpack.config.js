@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const DotenvPlugin = require('dotenv-webpack')
 const ESLintPlugin = require('eslint-webpack-plugin')
+const Mode = require('frontmatter-markdown-loader/mode')
 
 let mode = 'development'
 let target = 'web'
@@ -73,6 +74,18 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
+      {
+        test: /\.md$/,
+        loader: 'frontmatter-markdown-loader',
+        options: {
+          mode: [Mode.BODY],
+        }
+      },
+      {
+        test: /\.json5?$/i,
+        loader: 'json5-loader',
+        type: 'javascript/auto',
+      },
     ]
   },
 
@@ -82,10 +95,11 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
 
-  devtool: 'source-map',
+  devtool: 'inline-cheap-source-map',
 
   devServer: {
     contentBase: './dist',
+    historyApiFallback: true,
     hot: true,
     after: function(app, server, compiler) {
       console.log()
