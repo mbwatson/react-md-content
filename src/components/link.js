@@ -2,8 +2,8 @@ import { PropTypes } from 'prop-types'
 import { Link as ReactLink } from 'react-router-dom'
 
 export const Link = ({ to, children, ...props }) => {
-  const externalUrlPattern = new RegExp(/^https?:\/\/|^mailto:/)
-  const match = externalUrlPattern.exec(to)
+  const nonInternalUrlPattern = new RegExp(/^https?:\/\/|^mailto:/)
+  const match = nonInternalUrlPattern.exec(to)
   
   if (match) {
     return <a href={ to } target="blank" rel="noopener noreferrer" { ...props }>{ children }</a>
