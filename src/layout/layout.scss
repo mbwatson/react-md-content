@@ -68,3 +68,13 @@ p {
   margin-bottom: 2rem;
 }
 
+a, a:active, a:visited {
+  transition: filter 250ms;
+  color: var(--color-renci);
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-renci);
+}
+
+a:hover {
+  filter: brightness(1.25);
+}
